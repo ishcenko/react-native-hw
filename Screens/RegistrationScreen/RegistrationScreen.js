@@ -1,3 +1,4 @@
+import React from "react";
 import {
   StyleSheet,
   Text,
@@ -8,17 +9,31 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from "react-native";
-import React from "react";
 
-const LoginScreen = () => {
+const RegistrationScreen = () => {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS == "ios" ? "padding" : "height"}
       style={styles.containerKeyB}
     >
       <View style={styles.container}>
-        <Text style={styles.title}>Увійти</Text>
+        <View style={styles.pfotoContainer}>
+          <TouchableOpacity style={styles.addbutton} activeOpacity={0.5}>
+            <ImageBackground
+              source={buttonImg}
+              style={{ width: "100%", height: "100%" }}
+            ></ImageBackground>
+          </TouchableOpacity>
+        </View>
+        <Text style={styles.title}>Реєстрація</Text>
 
+        <TextInput
+          style={styles.inputLogin}
+          placeholder="Логін"
+          inputMode="text"
+          value={login}
+          onChangeText={handleLogin}
+        />
         <TextInput
           style={styles.inputMailPassw}
           placeholder="Адреса електронної пошти"
@@ -28,7 +43,7 @@ const LoginScreen = () => {
         />
         <TextInput
           style={styles.inputMailPassw}
-          placeholder="Password"
+          placeholder="Пароль"
           secureTextEntry={true}
           value={password}
           onChangeText={handlePassword}
@@ -47,26 +62,23 @@ const LoginScreen = () => {
           activeOpacity={0.5}
           onPress={register}
         >
-          <Text style={styles.registerButtonText}>Увійти</Text>
+          <Text style={styles.registerButtonText}>Зареєстуватися</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={styles.loginLink}
           activeOpacity={0.5}
-          onPress={() => changeScrenn(1)}
+          onPress={() => changeScrenn(0)}
         >
-          <Text style={styles.loginLinkText}>
-            Немає акаунту? Зареєструватися
-          </Text>
+          <Text style={styles.loginLinkText}>Вже є акаунт? Увійти</Text>
         </TouchableOpacity>
       </View>
     </KeyboardAvoidingView>
   );
 };
-
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "#FFF",
     alignItems: "center",
     width: "100%",
     borderTopRightRadius: 25,
@@ -95,6 +107,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     marginTop: 32,
     lineHeight: 35,
+    color: "#212121",
   },
   inputLogin: {
     backgroundColor: "#F6F6F6",
@@ -137,7 +150,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 100,
-    marginTop: 44,
+    marginTop: 43,
   },
   registerButtonText: {
     color: "#fff",
@@ -155,4 +168,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LoginScreen;
+export default RegistrationScreen;

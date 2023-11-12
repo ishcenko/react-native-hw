@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "c4552294-9481-49ad-bada-2f901ec8e60c"
+      }
+    },
+    "android": {
+      "package": "com.andriiis.reactnativehw"
+    }
+  }
+}

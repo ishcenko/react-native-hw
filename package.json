@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "expo-status-bar": "^1.7.1",
     "react-native": "^0.72.6"
+  },
+  "scripts": {
+    "start": "expo start"
+  },
+  "devDependencies": {
+    "expo": "^49.0.18"
   }
 }
