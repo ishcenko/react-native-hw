@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 100,
-    marginTop: 44,
+    marginTop: 43,
   },
   registerButtonText: {
     color: "#fff",
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
   },
   loginLink: {
     marginTop: 16,
-    marginBottom: 66,
+    marginBottom: 144,
   },
   loginLinkText: {
     fontStyle: "normal",

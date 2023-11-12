@@ -17,13 +17,10 @@ export default function App() {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.maincontainer}>
-        <ImageBackground source={backImage} style={styles.backImg}>
-          {activeScreen === 0 ? (
-            <LoginScreen changeScrenn={changeScrennFunc} />
-          ) : (
-            <RegistrationScreen changeScrenn={changeScrennFunc} />
-          )}
-        </ImageBackground>
+        <ImageBackground
+          source={backImage}
+          style={styles.backImg}
+        ></ImageBackground>
         <StatusBar style="auto" />
       </View>
     </TouchableWithoutFeedback>
