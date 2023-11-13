@@ -1,40 +1,25 @@
-import { StatusBar } from "expo-status-bar";
-
-import {
-  StyleSheet,
-  ImageBackground,
-  View,
-  TouchableWithoutFeedback,
-  Keyboard,
-} from "react-native";
-import React from "react";
-import RegistrationScreen from "./Screens/RegistrationScreen/RegistrationScreen";
-import LoginScreen from "./Screens/PostsScreen/PostsScreen";
-
-const backImage = require("./images/add.svg");
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
+import RegistrationScreen from './Sreens/RegistrationScreen';
+import LoginScreen from './Sreens/LoginScreen';
+import { useFonts } from "expo-font";
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    "Roboto-Medium": require("./assets/fonts/Roboto-Medium.ttf"),
+    "Roboto-Regular": require("./assets/fonts/Roboto-Regular.ttf"),
+    "Roboto-Bold": require("./assets/fonts/Roboto-Bold.ttf"),
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-      <View style={styles.maincontainer}>
-        <ImageBackground
-          source={backImage}
-          style={styles.backImg}
-        ></ImageBackground>
-        <StatusBar style="auto" />
-      </View>
-    </TouchableWithoutFeedback>
+<LoginScreen />
+
+// <RegistrationScreen/>
+
   );
 }
 
-const styles = StyleSheet.create({
-  maincontainer: {
-    flex: 1,
-    alignItems: "center",
-  },
-  backImg: {
-    flex: 1,
-    justifyContent: "flex-end",
-    width: "100%",
-  },
-});
+
