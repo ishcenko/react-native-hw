@@ -54,7 +54,7 @@ export default function RegistrationScreen() {
                   <AntDesign name="pluscircleo" size={24} color="#FF6C00" />
                 </Pressable>
               </View>
-              <Text style={styles.title}>Регистрация</Text>
+              <Text style={styles.title}>Реєстрація</Text>
 
               <View style={styles.inputWrap}>
                 <TextInput
@@ -62,7 +62,7 @@ export default function RegistrationScreen() {
                   onChangeText={(value) =>
                     setState((prevState) => ({ ...prevState, login: value }))
                   }
-                  placeholder="Логин"
+                  placeholder="Логін"
                   placeholderTextColor={"#BDBDBD"}
                   style={{
                     ...styles.input,
@@ -80,7 +80,7 @@ export default function RegistrationScreen() {
                   onChangeText={(value) =>
                     setState((prevState) => ({ ...prevState, email: value }))
                   }
-                  placeholder="Адрес электронной почты"
+                  placeholder="Адреса електронної пошти"
                   placeholderTextColor={"#BDBDBD"}
                   style={{
                     ...styles.input,
@@ -123,7 +123,7 @@ export default function RegistrationScreen() {
                     style={styles.toggleButton}
                   >
                     <Text style={styles.toggleText}>
-                      {isPasswordHidden ? "Показать" : "Скрыть"}
+                      {isPasswordHidden ? "Показати" : "Сховати"}
                     </Text>
                   </Pressable>
                 </View>
@@ -131,9 +131,9 @@ export default function RegistrationScreen() {
               {!isShowKeyboard && (
                 <>
                   <Pressable onPress={handleSubmit} style={styles.button}>
-                    <Text style={styles.buttonText}>Зарегистрироваться</Text>
+                    <Text style={styles.buttonText}>Зареєстуватися</Text>
                   </Pressable>
-                  <Text style={styles.logInText}>Уже есть аккаунт? Войти</Text>
+                  <Text style={styles.logInText}>Вже є акаунт? Увійти</Text>
                 </>
               )}
             </View>
@@ -166,17 +166,17 @@ const styles = StyleSheet.create({
     height: 110,
     backgroundColor: "#F6F6F6",
     position: "absolute",
-    top: -50,
-    left: 150,
+    top: -60,
+    left: 128,
     borderRadius: 16,
   },
   avatarButton: {
-    position: 'absolute',
+    position: "absolute",
     right: -12,
     bottom: 10,
   },
   title: {
-    fontFamily: "Roboto-Medium",
+    fontFamily: "Roboto",
     textAlign: "center",
     color: "#212121",
     fontSize: 30,
@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
   inputWrap: {
     flexDirection: "column",
     gap: 16,
-    marginBottom: 20,
+    marginBottom: 33,
   },
   image: {
     position: "absolute",
@@ -196,13 +196,14 @@ const styles = StyleSheet.create({
     top: 0,
   },
   input: {
-    height: 45,
+    width: 343,
+    height: 50,
     padding: 15,
     borderWidth: 1,
-    // backgroundColor: "#F6F6F6",
-    // borderColor: "#E8E8E8",
+    backgroundColor: "#F6F6F6",
+    borderColor: "#E8E8E8",
     borderRadius: 8,
-    fontFamily: "Roboto-Regular",
+    fontFamily: "Roboto",
   },
   button: {
     height: 51,
@@ -210,22 +211,22 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 100,
-    marginBottom: 15,
+    marginBottom: 16,
   },
   buttonText: {
     color: "#FFFFFF",
     fontSize: 16,
     fontWeight: 400,
     lineHeight: 16,
-    fontFamily: "Roboto-Regular",
+    fontFamily: "Roboto",
   },
   logInText: {
     textAlign: "center",
-    color: '#1B4371',
+    color: "#1B4371",
     fontSize: 16,
     fontWeight: 400,
     lineHeight: 19,
-    fontFamily: "Roboto-Regular",
+    fontFamily: "Roboto",
     marginBottom: 50,
   },
   toggleButton: {

@@ -47,7 +47,7 @@ export default function RegistrationScreen() {
               style={styles.image}
             />
             <View style={styles.formWrap}>
-              <Text style={styles.title}>Войти</Text>
+              <Text style={styles.title}>Увійти</Text>
 
               <View style={styles.inputWrap}>
                 <TextInput
@@ -55,7 +55,7 @@ export default function RegistrationScreen() {
                   onChangeText={(value) =>
                     setState((prevState) => ({ ...prevState, email: value }))
                   }
-                  placeholder="Адрес электронной почты"
+                  placeholder="Адреса електронної пошти"
                   placeholderTextColor={"#BDBDBD"}
                   style={{
                     ...styles.input,
@@ -98,7 +98,7 @@ export default function RegistrationScreen() {
                     style={styles.toggleButton}
                   >
                     <Text style={styles.toggleText}>
-                      {isPasswordHidden ? "Показать" : "Скрыть"}
+                      {isPasswordHidden ? "Показати" : "Сховати"}
                     </Text>
                   </Pressable>
                 </View>
@@ -106,10 +106,10 @@ export default function RegistrationScreen() {
               {!isShowKeyboard && (
                 <>
                   <Pressable onPress={handleSubmit} style={styles.button}>
-                    <Text style={styles.buttonText}>Войти</Text>
+                    <Text style={styles.buttonText}>Увійти</Text>
                   </Pressable>
                   <Text style={styles.logInText}>
-                    Нет аккаунта? Зарегистрироваться
+                    Немає акаунту? Зареєструватися
                   </Text>
                 </>
               )}
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     paddingTop: 30,
   },
   title: {
-    fontFamily: "Roboto-Medium",
+    fontFamily: "Roboto",
     textAlign: "center",
     color: "#212121",
     fontSize: 30,
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
   inputWrap: {
     flexDirection: "column",
     gap: 16,
-    marginBottom: 30,
+    marginBottom: 43,
   },
   image: {
     position: "absolute",
@@ -156,11 +156,12 @@ const styles = StyleSheet.create({
     top: 0,
   },
   input: {
-    height: 45,
+    width: 343,
+    height: 50,
     padding: 15,
     borderWidth: 1,
     borderRadius: 8,
-    fontFamily: "Roboto-Regular",
+    fontFamily: "Roboto",
   },
   button: {
     height: 51,
@@ -168,14 +169,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 100,
-    marginBottom: 15,
+    marginBottom: 16,
   },
   buttonText: {
     color: "#FFFFFF",
     fontSize: 16,
     fontWeight: 400,
     lineHeight: 16,
-    fontFamily: "Roboto-Regular",
+    fontFamily: "Roboto",
   },
   logInText: {
     textAlign: "center",
@@ -183,7 +184,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 400,
     lineHeight: 19,
-    fontFamily: "Roboto-Regular",
+    fontFamily: "Roboto",
     marginBottom: 100,
   },
   toggleButton: {
@@ -193,7 +194,7 @@ const styles = StyleSheet.create({
   },
   toggleText: {
     color: "#1B4371",
-    fontFamily: "Roboto-Regular",
+    fontFamily: "Roboto",
     lineHeight: 19,
   },
 });
