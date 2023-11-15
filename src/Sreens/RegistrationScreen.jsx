@@ -29,12 +29,12 @@ const RegistrationScreen = ({ navigation }) => {
     setAvatarImage(null);
   };
   return (
-    <SharedLayout>
-      <KeyboardAvoidingView
-        behavior={Platform.OS === "ios" ? "padding" : "height"}
-        style={styles.container}
-        keyboardVerticalOffset={-199}
-      >
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      style={styles.container}
+      keyboardVerticalOffset={-200}
+    >
+      <SharedLayout>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View style={styles.innerContainer}>
             <View style={styles.boxAuth}>
@@ -129,8 +129,8 @@ const RegistrationScreen = ({ navigation }) => {
             </View>
           </View>
         </TouchableWithoutFeedback>
-      </KeyboardAvoidingView>
-    </SharedLayout>
+      </SharedLayout>
+    </KeyboardAvoidingView>
   );
 };
 
