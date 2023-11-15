@@ -11,7 +11,7 @@ import {
   TextInput,
 } from "react-native";
 import SharedLayout from "../components/SharedLayout";
-
+import { UploadAvatar } from "../components/UploadAvatar";
 const RegistrationScreen = ({ navigation }) => {
   const [isFocusInpuLogint, setIsFocusInputLogin] = useState(false);
   const [isFocusInputEmail, setIsFocusInputEmail] = useState(false);
@@ -20,17 +20,29 @@ const RegistrationScreen = ({ navigation }) => {
   const [loginValue, setlogin] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const [avatarImage, setAvatarImage] = useState(null);
+  const selectAvatar = () => {
+    console.log("Select Avatar");
+  };
+  const handleClearAvatar = () => {
+    console.log("Clear Avatar");
+    setAvatarImage(null);
+  };
   return (
     <SharedLayout>
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={styles.container}
-        keyboardVerticalOffset={-187}
+        keyboardVerticalOffset={-199}
       >
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View style={styles.innerContainer}>
             <View style={styles.boxAuth}>
+              <UploadAvatar
+                image={avatarImage}
+                selectAvatar={selectAvatar}
+                hundleClearAvatar={handleClearAvatar}
+              />
               <Text style={styles.registerText}>Реєстрація</Text>
 
               <View style={styles.boxInput}>
@@ -101,7 +113,8 @@ const RegistrationScreen = ({ navigation }) => {
                   </TouchableOpacity>
                 </View>
               </View>
-              <TouchableOpacity style={styles.btnRegister} onPress={onRegister}>
+
+              <TouchableOpacity style={styles.btnRegister}>
                 <Text style={styles.btnRegisterText}>Зареєстуватися</Text>
               </TouchableOpacity>
 
